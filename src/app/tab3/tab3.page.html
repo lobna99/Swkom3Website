@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Report delivery
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,20 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Report delivery</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <form  (ngSubmit)="onSubmit()" style="display:contents">
+    <ion-item>
+      <ion-label class="title" for="tracking">Tracking Id:</ion-label>
+      <ion-input class="input" id="tracking" name="tracking" [(ngModel)]="Report.trackingId" type="text" pattern="^[A-Z0-9]{9}$"></ion-input> 
+    </ion-item>
+    <ion-button class="submit-btn" expand="block" type="submit">Submit</ion-button>
+  </form>
+  <ion-card *ngIf="submitted">
+    <ion-card-header>
+      <ion-card-title>
+       Parcel delivered</ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>

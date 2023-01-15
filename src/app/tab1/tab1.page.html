@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Submit Parcel
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,84 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Submit Parcel</ion-title>
     </ion-toolbar>
   </ion-header>
+  <form  (ngSubmit)="onSubmit()" style="display:contents">
+    <ion-item>
+      <ion-label class="title" for="weight">Weight:</ion-label>
+      <ion-input class="input" id="weight" name="weight" [(ngModel)]="formData.weight" type="number"></ion-input> 
+    </ion-item>
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Recipient</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+      <ion-item>
+        <ion-label position="floating">Name:</ion-label>
+        <ion-input class="input" id="recipientName" name="name" [(ngModel)]="formData.recipient.name" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Street:</ion-label>
+        <ion-input class="input" id="recipientStreet" name="street" [(ngModel)]="formData.recipient.street" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Postal Code:</ion-label>
+        <ion-input class="input" id="recipientPostalCode" name="postal" [(ngModel)]="formData.recipient.postalCode" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">City:</ion-label>
+        <ion-input class="input" id="recipientCity" name="city" [(ngModel)]="formData.recipient.city" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Country:</ion-label>
+        <ion-input class="input" id="recipientCountry" name="country" [(ngModel)]="formData.recipient.country" type="text"></ion-input>
+      </ion-item>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Sender</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item>
+          <ion-label position="floating">Name:</ion-label>
+          <ion-input class="input" id="senderName" name="sname" [(ngModel)]="formData.sender.name" type="text"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating">Street:</ion-label>
+          <ion-input class="input" id="senderStreet" name="sstreet" [(ngModel)]="formData.sender.street" type="text"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating">Postal Code:</ion-label>
+          <ion-input class="input" id="senderPostalCode" name="spostal" [(ngModel)]="formData.sender.postalCode" type="text"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating">City:</ion-label>
+          <ion-input class="input" id="senderCity" name="scity" [(ngModel)]="formData.sender.city" type="text"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating">Country:</ion-label>
+          <ion-input class="input" id="senderCountry" name="scountry" [(ngModel)]="formData.sender.country" type="text"></ion-input>
+        </ion-item>        
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+  <ion-button class="submit-btn" expand="block" type="submit">Submit</ion-button>
+  </form>
+  <ion-card *ngIf="submitted">
+  <ion-card-header >
+    <ion-card-title>Tracking ID</ion-card-title>
+    <ion-card-subtitle>This is the tracking id of the submited parcel</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content style="color: yellow;">
+    {{httpResult.trackingId}}
+    </ion-card-content>
+</ion-card>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Track Parcel
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,48 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Track Parcel</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <form  (ngSubmit)="onSubmit()" style="display:contents">
+    <ion-item>
+      <ion-label class="title" for="tracking">Tracking Id:</ion-label>
+      <ion-input class="input" id="tracking" name="tracking" [(ngModel)]="Track.trackingId" type="text" pattern="^[A-Z0-9]{9}$"></ion-input> 
+    </ion-item>
+    <ion-button class="submit-btn" expand="block" type="submit">Submit</ion-button>
+  </form>
+  <ion-card *ngIf="parcel && submitted">
+    <ion-card-header>
+      <ion-card-title>
+        State: {{ parcel.state }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-accordion-group>
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>Visited Hops</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+      <ion-list [inset]="true">
+        <ion-item *ngFor="let hop of parcel.visitedHops">
+          <ion-label> {{hop.code }} - {{ hop.description }} - {{ hop.dateTime }}</ion-label>
+        </ion-item>
+      </ion-list>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="second">
+          <ion-item slot="header" color="light">
+            <ion-label>Future Hops</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+      <ion-list [inset]="true">
+        <ion-item *ngFor="let hop of parcel.futureHops">
+          <ion-label> {{ hop.code }} - {{ hop.description }} - {{ hop.dateTime }}</ion-label>
+        </ion-item>
+      </ion-list>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
