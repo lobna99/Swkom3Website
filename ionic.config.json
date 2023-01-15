@@ -1,0 +1,7 @@
+{
+  "name": "parceltracker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
