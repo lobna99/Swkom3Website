@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "swkom-f1f97": {
+      "hosting": {
+        "app": [
+          "swkom-f1f97"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "swkom-f1f97"
+  }
+}

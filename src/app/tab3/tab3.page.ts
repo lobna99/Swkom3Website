@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-tab3',
@@ -33,7 +34,9 @@ export class Tab3Page {
     console.log(report);
     // You can also send the json to a server or save it to a database here
   }
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+
+  }
 
  
 

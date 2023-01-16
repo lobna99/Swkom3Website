@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "749825166837",
+    "project_id": "swkom-f1f97",
+    "storage_bucket": "swkom-f1f97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749825166837:android:98c97acdfc71529d7ba4bc",
+        "android_client_info": {
+          "package_name": "ionic.parceltracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749825166837-qv4i3pc33tpt7eif09qpf3lk4hr43bkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsNJXaUB--_1mSMHwH2LcpVtLosSK08hk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749825166837-qv4i3pc33tpt7eif09qpf3lk4hr43bkd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
